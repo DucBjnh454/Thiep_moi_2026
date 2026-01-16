@@ -469,7 +469,7 @@ const TetInvitation = () => {
         </div>
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <h1 className="font-serif italic text-6xl md:text-9xl font-black mb-6 gold-gradient-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-            NEW YEAR PARTY 2026
+             YEAR END PARTY
           </h1>
           <p className="text-gold-shimmer text-xl md:text-3xl font-light tracking-[0.4em] uppercase mb-12 drop-shadow-md">
             Gắn Kết Vươn Xa • Bính Ngọ Hưng Thịnh
