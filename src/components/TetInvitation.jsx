@@ -817,8 +817,7 @@ const TetInvitation = () => {
                   Di chuyển & Chụp ảnh checkin
                 </h4>
                 <p className="text-ivory/80 text-base leading-relaxed">
-                  Nhân sự di chuyển đến nhà hàng, khách mời Chụp ảnh checkin
-                  cùng BLD, Phòng Ban
+                  Khách mời và nhân viên di chuyển đến nhà hàng Chụp ảnh checkin cùng ban lãnh đạo, các phòng ban
                 </p>
               </div>
             </div>
