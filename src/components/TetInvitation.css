@@ -1,0 +1,896 @@
+/* Custom Tailwind CSS utilities */
+@layer utilities {
+  .gold-gradient-text {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+  }
+  
+  .gold-button {
+    background: linear-gradient(135deg, #D4AF37 0%, #F9E29C 50%, #B38728 100%) !important;
+    color: #4a0000 !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .gold-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    pointer-events: none;
+  }
+  
+  .gold-button:hover {
+    background: linear-gradient(135deg, #F9E29C 0%, #FFD700 50%, #D4AF37 100%) !important;
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+  }
+  
+  .gold-button:hover::after {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .gold-border {
+    border: 1px solid transparent;
+    background-image: linear-gradient(#7a0000, #7a0000), linear-gradient(to right, #BF953F, #FCF6BA, #AA771C);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+  
+  .tet-pattern {
+   background-color: #7A0000;
+    background-image: url("https://www.transparenttextures.com/patterns/pinstripe-dark.png");
+  }
+  
+  .cloud-motif {
+    opacity: 0.15;
+    filter: brightness(0) saturate(100%) invert(84%) sepia(29%) font-weight(600) saturate(651%) hue-rotate(3deg) brightness(96%) contrast(89%);
+  }
+  .card-confirm {
+    background: rgba(122, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 3px solid #FFD700 !important;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-confirm::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      /* Small decorative stars/dots pattern */
+      radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.2) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 50% 50%, rgba(255, 223, 0, 0.12) 1px, transparent 1px),
+      radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.2) 1.5px, transparent 1.5px),
+      /* Additional smaller decorative elements */
+      radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 60% 80%, rgba(212, 175, 55, 0.12) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 20% 60%, rgba(255, 223, 0, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 80% 40%, rgba(255, 215, 0, 0.12) 1.5px, transparent 1.5px);
+    background-size: 80px 80px, 100px 100px, 120px 120px, 90px 90px, 110px 110px,
+                      70px 70px, 95px 95px, 85px 85px, 105px 105px;
+    background-position: 0 0, 25px 25px, 50px 50px, 15px 15px, 35px 35px,
+                         10px 10px, 30px 30px, 5px 5px, 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card-confirm > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-confirm:hover {
+    border: 3px solid #FFD700 !important;
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6), 
+                0 0 30px rgba(255, 215, 0, 0.3),
+                inset 0 0 25px rgba(255, 215, 0, 0.15) !important;
+    transform: translateY(-2px);
+  }
+  
+  .card-confirm:hover::before {
+    opacity: 0.85;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.3) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 75% 75%, rgba(212, 175, 55, 0.25) 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, rgba(255, 223, 0, 0.22) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 15% 85%, rgba(255, 215, 0, 0.28) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 85% 15%, rgba(212, 175, 55, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 40% 20%, rgba(255, 215, 0, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 60% 80%, rgba(212, 175, 55, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 20% 60%, rgba(255, 223, 0, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 80% 40%, rgba(255, 215, 0, 0.18) 2px, transparent 2px);
+  }
+  
+  .timeline-card {
+    background: rgba(122, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border: 3px solid #FFD700 !important;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.4), 
+                0 0 20px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(255, 215, 0, 0.1) !important;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .timeline-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      /* Small decorative stars/dots pattern */
+      radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.2) 2px, transparent 2px),
+      radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 50% 50%, rgba(255, 223, 0, 0.12) 1px, transparent 1px),
+      radial-gradient(circle at 10% 80%, rgba(255, 215, 0, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 90% 20%, rgba(212, 175, 55, 0.2) 1.5px, transparent 1.5px),
+      /* Additional smaller decorative elements */
+      radial-gradient(circle at 35% 15%, rgba(255, 215, 0, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 65% 85%, rgba(212, 175, 55, 0.12) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 15% 50%, rgba(255, 223, 0, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 85% 50%, rgba(255, 215, 0, 0.12) 1.5px, transparent 1.5px);
+    background-size: 80px 80px, 100px 100px, 120px 120px, 90px 90px, 110px 110px, 
+                      70px 70px, 95px 95px, 85px 85px, 105px 105px;
+    background-position: 0 0, 25px 25px, 50px 50px, 15px 15px, 35px 35px,
+                         10px 10px, 30px 30px, 5px 5px, 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .timeline-card > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .timeline-card:hover {
+    background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.25) 0%, 
+                rgba(212, 175, 55, 0.3) 50%, 
+                rgba(255, 223, 0, 0.2) 100%) !important;
+    border: 3px solid #FFD700 !important;
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.6), 
+                0 0 30px rgba(255, 215, 0, 0.3),
+                inset 0 0 25px rgba(255, 215, 0, 0.15) !important;
+    transform: translateY(-2px);
+  }
+  
+  .timeline-card:hover::before {
+    opacity: 0.85;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.3) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.25) 2px, transparent 2px),
+      radial-gradient(circle at 50% 50%, rgba(255, 223, 0, 0.22) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 10% 80%, rgba(255, 215, 0, 0.28) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 90% 20%, rgba(212, 175, 55, 0.3) 2px, transparent 2px),
+      radial-gradient(circle at 35% 15%, rgba(255, 215, 0, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 65% 85%, rgba(212, 175, 55, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 15% 50%, rgba(255, 223, 0, 0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 85% 50%, rgba(255, 215, 0, 0.18) 2px, transparent 2px);
+  }
+}
+
+/* Custom Horse Cursor for Year of the Horse 2026 */
+/* Hide default cursor - JavaScript component will show horse */
+html,
+body,
+* {
+  cursor: none !important;
+}
+
+/* Custom Horse Cursor Component Styles */
+.horse-cursor-custom {
+  transition: transform 0.1s ease-out;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Scale cursor when hovering interactive elements */
+.horse-cursor-custom.scale-up {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  color: #FFFFF0;
+  overflow-x: hidden;
+}
+
+.dark {
+  background-color: #7A0000;
+  background-image: url("https://www.transparenttextures.com/patterns/pinstripe-dark.png");
+}
+
+/* Selection styles */
+::selection {
+  background-color: #D4AF37;
+  color: #7a0000;
+}
+
+/* Image Carousel Styles */
+.image-carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-carousel-slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.image-carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.image-carousel-nav-button {
+  transition: all 0.3s ease;
+}
+
+.image-carousel-nav-button:hover {
+  transform: scale(1.1);
+}
+
+.image-carousel-dot {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-carousel-dot:hover {
+  background-color: rgba(212, 175, 55, 0.7) !important;
+}
+
+/* Countdown Animation - Enhanced version below */
+
+/* Enhanced Scroll Animation Styles */
+.scroll-animate {
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.scroll-animate.animate-out {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  filter: blur(8px);
+}
+
+.scroll-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  animation: shimmerGlow 2s ease-out 0.5s;
+}
+
+/* Shimmer glow effect when element enters view */
+@keyframes shimmerGlow {
+  0% {
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4),
+                0 0 60px rgba(255, 215, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* Stagger animation for timeline items with enhanced effects */
+.timeline-item {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--delay, 0) * 0.15s);
+  will-change: opacity, transform, filter;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-item.animate-out {
+  opacity: 0;
+  transform: translateX(-40px) scale(0.9) rotateY(-10deg);
+  filter: blur(6px);
+}
+
+.timeline-item.animate-in {
+  opacity: 1;
+  transform: translateX(0) scale(1) rotateY(0deg);
+  filter: blur(0);
+  animation: cardSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--delay, 0) * 0.15s);
+}
+
+@keyframes cardSlideIn {
+  0% {
+    transform: translateX(-40px) scale(0.9) rotateY(-10deg);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(5px) scale(1.02) rotateY(2deg);
+  }
+  100% {
+    transform: translateX(0) scale(1) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Enhanced fade in from different directions */
+.fade-in-left.animate-out {
+  opacity: 0;
+  transform: translateX(-60px) scale(0.95);
+  filter: blur(6px);
+}
+
+.fade-in-left.animate-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+  animation: slideInLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(5px) scale(1.01);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in-right.animate-out {
+  opacity: 0;
+  transform: translateX(60px) scale(0.95);
+  filter: blur(6px);
+}
+
+.fade-in-right.animate-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  filter: blur(0);
+  animation: slideInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(-5px) scale(1.01);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in-up.animate-out {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  filter: blur(6px);
+}
+
+.fade-in-up.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  animation: slideInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-in-down.animate-out {
+  opacity: 0;
+  transform: translateY(-60px) scale(0.95);
+  filter: blur(6px);
+}
+
+.fade-in-down.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  animation: slideInDown 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-60px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(5px) scale(1.01);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Enhanced scale animation with rotation */
+.scale-in.animate-out {
+  opacity: 0;
+  transform: scale(0.85) rotate(-5deg);
+  filter: blur(8px);
+}
+
+.scale-in.animate-in {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  filter: blur(0);
+  animation: scaleInBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleInBounce {
+  0% {
+    transform: scale(0.85) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  75% {
+    transform: scale(0.98) rotate(-1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Fade in with zoom effect */
+.fade-zoom-in.animate-out {
+  opacity: 0;
+  transform: scale(0.8);
+  filter: blur(10px);
+}
+
+.fade-zoom-in.animate-in {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  animation: zoomInFade 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes zoomInFade {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Rotate fade in */
+.rotate-fade-in.animate-out {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.9);
+  filter: blur(6px);
+}
+
+.rotate-fade-in.animate-in {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+  filter: blur(0);
+  animation: rotateFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes rotateFadeIn {
+  0% {
+    transform: rotate(-10deg) scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Stagger children animation */
+.stagger-children > * {
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--stagger-index, 0) * 0.1s);
+}
+
+.stagger-children.animate-out > * {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.stagger-children.animate-in > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Parallax effect for background elements */
+.parallax-slow {
+  transition: transform 0.3s ease-out;
+  will-change: transform;
+}
+
+/* Enhanced timeline card animation on scroll - Note: timeline-card base styles defined above */
+
+.timeline-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 215, 0, 0.1), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.timeline-item.animate-in .timeline-card::after {
+  left: 100%;
+  transition-delay: calc(var(--delay, 0) * 0.15s + 0.3s);
+}
+
+/* Animated Timeline Bar */
+.timeline-container {
+  position: relative;
+}
+
+.timeline-bar-base {
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(212, 175, 55, 0.3) 10%,
+    rgba(212, 175, 55, 0.5) 50%,
+    rgba(212, 175, 55, 0.3) 90%,
+    transparent 100%
+  );
+  transform: translateX(-2px);
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline-bar-base {
+    left: 50%;
+    transform: translateX(-2px);
+  }
+}
+
+.timeline-bar-progress {
+  position: absolute;
+  top: 0;
+  left: 1.25rem;
+  width: 4px;
+  height: var(--timeline-progress, 0%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 215, 0, 0.8) 0%,
+    rgba(212, 175, 55, 1) 20%,
+    rgba(255, 215, 0, 1) 50%,
+    rgba(212, 175, 55, 1) 80%,
+    rgba(255, 215, 0, 0.8) 100%
+  );
+  box-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  transform: translateX(-2px);
+  transition: height 1s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.5s ease;
+  z-index: 1;
+  border-radius: 2px;
+  animation: timelineGlow 2s ease-in-out infinite;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .timeline-bar-progress {
+    left: 50%;
+    transform: translateX(-2px);
+  }
+}
+
+/* Glow animation for timeline bar */
+@keyframes timelineGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.6),
+      0 0 20px rgba(212, 175, 55, 0.4),
+      0 0 30px rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 15px rgba(255, 215, 0, 0.8),
+      0 0 30px rgba(212, 175, 55, 0.6),
+      0 0 45px rgba(255, 215, 0, 0.5),
+      0 0 60px rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Shimmer effect on timeline bar */
+.timeline-bar-progress::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: timelineShimmer 3s ease-in-out infinite;
+}
+
+@keyframes timelineShimmer {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Pulse effect at the end of progress bar */
+.timeline-bar-progress::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 1) 0%, rgba(212, 175, 55, 0.8) 50%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8),
+    0 0 20px rgba(212, 175, 55, 0.6),
+    0 0 30px rgba(255, 215, 0, 0.4);
+  animation: timelinePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes timelinePulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.3);
+    opacity: 0.8;
+  }
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6),
+                0 0 60px rgba(255, 215, 0, 0.3);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced countdown animation with bounce */
+.countdown-number {
+  animation: countdownFlip 0.5s ease-in-out;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+@keyframes countdownFlip {
+  0% {
+    transform: rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(90deg) scale(0.8);
+    opacity: 0;
+  }
+  51% {
+    transform: rotateX(-90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Section entrance with scale and glow */
+section.scroll-animate.animate-in {
+  animation: sectionEntrance 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes sectionEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Section Background Styles */
+.section-bg-venue,
+.section-bg-program,
+.section-bg-location,
+.section-bg-rsvp {
+  position: relative;
+  z-index: 0;
+}
+
+.section-bg-venue > *:not(.absolute),
+.section-bg-program > *:not(.absolute),
+.section-bg-location > *:not(.absolute),
+.section-bg-rsvp > *:not(.absolute) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Radial Gradient Utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Animated Background Patterns */
+@keyframes patternMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100px 100px;
+  }
+}
+
+/* Pattern animation for sections */
+.section-bg-venue > div:first-child,
+.section-bg-program > div:first-child,
+.section-bg-location > div:first-child,
+.section-bg-rsvp > div:first-child {
+  animation: patternMove 20s linear infinite;
+}
+
+/* Location Section Mobile Responsive Styles */
+@media (max-width: 767px) {
+  /* Ensure map container doesn't overflow on mobile */
+  #dia-diem .relative.w-full {
+    min-width: 0;
+    width: 100%;
+  }
+  
+  /* Adjust map iframe for better mobile display */
+  #dia-diem iframe {
+    min-height: 250px;
+  }
+  
+  /* Better spacing for location info items on mobile */
+  #dia-diem .flex.items-start {
+    flex-wrap: wrap;
+  }
+  
+  /* Ensure icons don't shrink too much */
+  #dia-diem .material-symbols-outlined {
+    flex-shrink: 0;
+  }
+  
+  /* Adjust button size and position on mobile */
+  #dia-diem .gold-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  /* Better text wrapping for long addresses */
+  #dia-diem p {
+    word-break: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Tablet responsive adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #dia-diem .relative.w-full {
+    min-width: 0;
+  }
+}
+
