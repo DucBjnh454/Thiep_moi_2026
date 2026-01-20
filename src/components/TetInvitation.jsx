@@ -405,7 +405,7 @@ const TetInvitation = () => {
       {/* Header Navigation */}
       <div className="fixed top-0 w-full z-50  backdrop-blur-md border-b border-gold/30">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             
             <img
               alt="logo"
@@ -415,7 +415,7 @@ const TetInvitation = () => {
             <h2 className="text-gold-bright text-2xl font-bold tracking-tight font-serif italic">
               Tet 2026
             </h2>
-          </div>
+          </div> */}
           <div className="hidden md:flex items-center gap-8">
             <a
               className="text-ivory/80 hover:text-gold-bright text-sm font-medium transition-colors uppercase tracking-widest"
@@ -423,12 +423,12 @@ const TetInvitation = () => {
             >
               Chương Trình
             </a>
-            <a
+            {/* <a
               className="text-ivory/80 hover:text-gold-bright text-sm font-medium transition-colors uppercase tracking-widest"
               href="#venue-gallery"
             >
               Không Gian
-            </a>
+            </a> */}
             <a
               className="text-ivory/80 hover:text-gold-bright text-sm font-medium transition-colors uppercase tracking-widest"
               href="#dia-diem"
@@ -469,7 +469,7 @@ const TetInvitation = () => {
         </div>
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <h1 className="font-serif italic text-6xl md:text-9xl font-black mb-6 gold-gradient-text drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
-             YEAR END PARTY 2025
+             Thiệp Mời Mừng Thọ
           </h1>
           <p className="text-gold-shimmer text-xl md:text-3xl font-light tracking-[0.4em] uppercase mb-12 drop-shadow-md">
             Gắn Kết Vươn Xa • Bính Ngọ Hưng Thịnh
@@ -612,127 +612,7 @@ const TetInvitation = () => {
       </section> */}
 
       {/* Venue Gallery Section */}
-      <section
-        ref={(el) => (sectionRefs.current["venue-gallery"] = el)}
-        className={`py-24 bg-deep-red relative overflow-hidden scroll-animate section-bg-venue ${
-          visibleSections.has("venue-gallery") ? "animate-in" : "animate-out"
-        }`}
-        id="venue-gallery"
-        data-section="venue-gallery"
-      >
-        {/* Background Pattern Layers */}
-        <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/oriental-tiles.png')]"></div>
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/pinstripe-dark.png')]"></div>
-        
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gold/8 via-transparent to-gold/8"></div>
-        <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-gold/10 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-gold/10 to-transparent"></div>
-        
-        {/* Decorative Corner Gradients */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-gold/15 via-gold/5 to-transparent rounded-bl-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-gold/15 via-gold/5 to-transparent rounded-tr-full blur-3xl"></div>
-        <div className="max-w-[1400px] mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className={`relative scroll-animate fade-in-right ${
-              visibleSections.has("venue-gallery") ? "animate-in" : "animate-out"
-            }`}>
-              <div className="absolute -inset-6 border-2 border-gold/40 rounded-3xl transform rotate-2"></div>
-              <div
-                className="relative bg-deep-red p-3 rounded-2xl shadow-2xl border-2 border-gold overflow-hidden"
-                ref={carouselRef}
-                onTouchStart={onTouchStart}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
-              >
-                {/* Image Carousel Container */}
-                <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden">
-                  <div
-                    className="flex transition-transform duration-500 ease-in-out h-full"
-                    style={{
-                      transform: `translateX(-${currentImageIndex * 100}%)`,
-                    }}
-                  >
-                    {images.map((image, index) => (
-                      <div key={index} className="min-w-full h-full">
-                        <img
-                          alt={`Nhà hàng Vị Xưa interior ${index + 1}`}
-                          className="w-full h-full object-cover"
-                          src={image}
-                          loading={index === 0 ? "eager" : "lazy"}
-                        />
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Navigation Arrows */}
-                  <button
-                    onClick={goToPrevious}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-gold/80 hover:bg-gold text-deep-red p-2 rounded-full shadow-lg transition-all hover:scale-110 z-10"
-                    aria-label="Previous image"
-                  >
-                    <span className="material-symbols-outlined text-2xl">
-                      chevron_left
-                    </span>
-                  </button>
-                  <button
-                    onClick={goToNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-gold/80 hover:bg-gold text-deep-red p-2 rounded-full shadow-lg transition-all hover:scale-110 z-10"
-                    aria-label="Next image"
-                  >
-                    <span className="material-symbols-outlined text-2xl">
-                      chevron_right
-                    </span>
-                  </button>
-
-                  {/* Dots Indicator */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                    {images.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => goToImage(index)}
-                        className={`transition-all duration-300 rounded-full ${
-                          index === currentImageIndex
-                            ? "w-8 h-2 bg-gold-bright"
-                            : "w-2 h-2 bg-gold/50 hover:bg-gold/70"
-                        }`}
-                        aria-label={`Go to image ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-              {/* Decorative icons for Không Gian Tiệc */}
-              <div className="absolute top-40 -left-60 w-40 h-40 opacity-30">
-                <span className="material-symbols-outlined text-gold-bright text-8xl">
-                  wb_sunny
-                </span>
-              </div>
-            </div>
-            <div className={`space-y-8 scroll-animate fade-in-left ${
-              visibleSections.has("venue-gallery") ? "animate-in" : "animate-out"
-            }`}>
-              <h3 className="font-serif italic text-gold-bright text-2xl tracking-[0.4em] uppercase">
-                Không Gian Tiệc
-              </h3>
-              <h2 className="font-serif italic text-5xl md:text-6xl text-ivory leading-tight gold-gradient-text">
-                Nhà hàng Vị Xưa
-              </h2>
-              <div className="w-full h-1 bg-gradient-to-r from-gold to-transparent"></div>
-              <p className="text-gold-shimmer/90 text-xl leading-relaxed font-light">
-                Nhà hàng Vị Xưa là điểm đến lý tưởng để thưởng thức ẩm thực
-                truyền thống với những món ăn tinh tế, đậm đà hương vị quê nhà.
-                Từ những nguyên liệu tươi ngon, đội ngũ bếp chuyên nghiệp mang
-                đến trải nghiệm ẩm thực đầy cảm xúc. Không Gian Hoàn Hảo Cho Hội
-                Họp & Chiêu Đãi Với không gian trang nhã, ấm cúng, sang trọng Vị
-                Xưa là nơi lý tưởng cho các buổi gặp gỡ gia đình, tiếp đãi đối
-                tác hay hội họp bạn bè. Mỗi món ăn không chỉ ngon mà còn mang
-                đến sự kết nối và gắn kết.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+   
 
       {/* Program Schedule Section */}
       <section
@@ -849,15 +729,15 @@ const TetInvitation = () => {
                   <ul className="text-base space-y-2 text-ivory/90 font-medium ml-4">
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-gold-bright rounded-full"></span>{" "}
-                      Chairman: Nguyễn Ngọc Hà
+                      AAAAAA
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-gold-bright rounded-full"></span>{" "}
-                      CEO: Huỳnh Anh Đức
+                      BBBBBBBBBB
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-gold-bright rounded-full"></span>{" "}
-                      COO: Nguyễn Ngọc Đức
+                      CCCCC
                     </li>
                   </ul>
                   <p className="text-ivory/80 text-base leading-relaxed border-t border-gold/20 pt-4">
