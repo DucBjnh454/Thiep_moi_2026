@@ -74,12 +74,12 @@ const HorseCursor = () => {
 
 const TetInvitation = () => {
   // Image carousel state
-  // eslint-disable-next-line no-unused-vars
-  const [_currentImageIndex, setCurrentImageIndex] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  // eslint-disable-next-line no-unused-vars
-  const _carouselRef = useRef(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const carouselRef = useRef(null);
 
   // Countdown state
   const [countdown, setCountdown] = useState({
@@ -172,21 +172,21 @@ const TetInvitation = () => {
   const minSwipeDistance = 50;
 
   // Handle touch start
-  // eslint-disable-next-line no-unused-vars
-  const _onTouchStart = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   // Handle touch move
-  // eslint-disable-next-line no-unused-vars
-  const _onTouchMove = (e) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const onTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
   // Handle touch end and determine swipe direction
-  // eslint-disable-next-line no-unused-vars
-  const _onTouchEnd = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
@@ -216,8 +216,8 @@ const TetInvitation = () => {
   };
 
   // Go to specific image
-  // eslint-disable-next-line no-unused-vars
-  const _goToImage = (index) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+  const goToImage = (index) => {
     setCurrentImageIndex(index);
   };
 
