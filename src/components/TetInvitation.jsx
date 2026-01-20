@@ -74,12 +74,8 @@ const HorseCursor = () => {
 
 const TetInvitation = () => {
   // Image carousel state
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const carouselRef = useRef(null);
+  // Only need the setter (the current index isn't rendered anywhere in the UI)
+  const [, setCurrentImageIndex] = useState(0);
 
   // Countdown state
   const [countdown, setCountdown] = useState({
@@ -167,59 +163,6 @@ const TetInvitation = () => {
     "/anh10.jpg",
     "/anh11.jpg",
   ];
-
-  // Minimum swipe distance (in pixels)
-  const minSwipeDistance = 50;
-
-  // Handle touch start
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  // Handle touch move
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  // Handle touch end and determine swipe direction
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      goToNext();
-    }
-    if (isRightSwipe) {
-      goToPrevious();
-    }
-  };
-
-  // Go to next image
-  const goToNext = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  // Go to previous image
-  const goToPrevious = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  // Go to specific image
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const goToImage = (index) => {
-    setCurrentImageIndex(index);
-  };
 
   // Auto-play carousel (optional - comment out if you don't want auto-play)
   useEffect(() => {
