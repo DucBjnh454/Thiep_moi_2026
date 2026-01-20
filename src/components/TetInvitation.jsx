@@ -74,10 +74,12 @@ const HorseCursor = () => {
 
 const TetInvitation = () => {
   // Image carousel state
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // eslint-disable-next-line no-unused-vars
+  const [_currentImageIndex, setCurrentImageIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const carouselRef = useRef(null);
+  // eslint-disable-next-line no-unused-vars
+  const _carouselRef = useRef(null);
 
   // Countdown state
   const [countdown, setCountdown] = useState({
@@ -170,18 +172,21 @@ const TetInvitation = () => {
   const minSwipeDistance = 50;
 
   // Handle touch start
-  const onTouchStart = (e) => {
+  // eslint-disable-next-line no-unused-vars
+  const _onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
   // Handle touch move
-  const onTouchMove = (e) => {
+  // eslint-disable-next-line no-unused-vars
+  const _onTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
   // Handle touch end and determine swipe direction
-  const onTouchEnd = () => {
+  // eslint-disable-next-line no-unused-vars
+  const _onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
@@ -211,7 +216,8 @@ const TetInvitation = () => {
   };
 
   // Go to specific image
-  const goToImage = (index) => {
+  // eslint-disable-next-line no-unused-vars
+  const _goToImage = (index) => {
     setCurrentImageIndex(index);
   };
 
