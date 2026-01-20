@@ -4,7 +4,7 @@
   "description": "Invitation to the YEP 2025 Party",
   "private": true,
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "dependencies": {
     "react": "^18.2.0",
